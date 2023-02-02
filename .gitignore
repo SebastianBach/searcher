@@ -1,0 +1,8 @@
+.vscode
+build
+test.sh
+commands.txt
+tests/__pycache__
+searcher/__pycache__
+web_parser/__pycache__
+tests/temp/database.sqlite

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block icon_link %}
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,{{ base64 }}">
+{% endblock %}
+
+
+{% block content %}
+<p>
+<div class="center">
+
+    <div class="cell"><img src="data:image/jpeg;base64,{{ base64 }}" alt="Reference Image" />
+        <a href="{{ reference }}" target="_blank" class="result">Reference</a>
+    </div>
+
+    {% for item in results %}
+
+    <div class="cell">
+        <a href="{{ item.src }}" target="_blank"><img class="result_img" width="100" src="img/{{ item.preview }}.jpg"
+                title="{{ item.distance }}" alt="Web image" loading="lazy" /></a>
+        <a href="{{ item.src }}" target="_blank" title="{{ item.src }}" class="result">{{ item.title }}</a>
+    </div>
+
+    {% endfor %}
+</div>
+</p>
+<div class="center-head">
+    <a class="info" href="info">📊</a>
+</div>
+{% endblock %}

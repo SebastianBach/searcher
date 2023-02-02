@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="/style.css">
+    {% block icon_link %}{% endblock %}
+</head>
+
+<body>
+    <div class="center-head">
+        Reverse Image Search
+
+        <form action="/search" method="post">
+            <label for="image-url">Image URL:</label>
+            <input type="text" id="image-url" name="image-url">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
